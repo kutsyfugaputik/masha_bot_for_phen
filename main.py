@@ -1,18 +1,18 @@
-    import sqlite3
-    import time
+import sqlite3
+import time
 
-    import telebot
-    from telebot import types
+import telebot
+from telebot import types
 
-    import markups as mark
-    import quests as qst
-    import specialists as spec
-    from config import token_api
-    from intro_text import intro_text
+import markups as mark
+import quests as qst
+import specialists as spec
+from config import token_api
+from intro_text import intro_text
 
-    my_id = "786254617" # Ваш айди куда будет приходить сообщения с информацией о юзере и его заявке
+my_id = "786254617" # Ваш айди куда будет приходить сообщения с информацией о юзере и его заявке
 
-    def get_info_user(bot, message, admin):  # ФУНКЦИЯ ОБ ОТПРАВКИ СООБЩЕНИЯ
+def get_info_user(bot, message, admin):  # ФУНКЦИЯ ОБ ОТПРАВКИ СООБЩЕНИЯ
           if admin:
               #для отправки жалобы
               bot.send_message(my_id, 'Менеджер вам послание об жалобе!!😮\n'+ message.text
@@ -30,7 +30,7 @@
 
 
       #запуск бота
-    def run_bot():
+def run_bot():
           id_spec=0
           bot = telebot.TeleBot(token_api)
 
@@ -151,5 +151,5 @@
                 print(e)
                 time.sleep(60)
 
-    if __name__ == '__main__':
+if __name__ == '__main__':
         run_bot()
